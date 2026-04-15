@@ -1,5 +1,5 @@
 [project]
-name = "logger-testing"
+name = "logify"
 version = "0.1.0"
 description = "Custom logging package comparing picologging and loguru"
 readme = "README.md"

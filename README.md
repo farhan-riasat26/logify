@@ -1,4 +1,4 @@
-# logger-testing
+# logify
 
 Custom logging package for Python 3.12+ built on `picologging`, `loguru`, `structlog`, and `python-json-logger`. Ships a preconfigured `log` object plus a `configure()` entrypoint and graceful `shutdown()`.
 
@@ -10,7 +10,7 @@ Custom logging package for Python 3.12+ built on `picologging`, `loguru`, `struc
 
 ## Install from a private GitHub repo with `uv`
 
-Replace `OWNER/REPO` with the actual path (e.g. `my-org/logger-testing`) and `REF` with a branch, tag, or commit SHA (e.g. `main`, `v0.1.0`).
+Replace `farhan-riasat26/logify` with the actual path (e.g. `my-org/logify`) and `REF` with a branch, tag, or commit SHA (e.g. `main`, `v0.1.0`).
 
 ### 1. Authenticate to GitHub
 
@@ -21,7 +21,7 @@ Pick **one** of the methods below. `uv` uses whichever Git transport you configu
 Make sure `ssh -T git@github.com` succeeds, then use an SSH URL:
 
 ```bash
-uv add "logger-testing @ git+ssh://git@github.com/OWNER/REPO.git@REF"
+uv add "logify @ git+ssh://git@github.com/farhan-riasat26/logify.git@REF"
 ```
 
 #### Option B — Personal Access Token (HTTPS)
@@ -30,7 +30,7 @@ Create a fine-grained PAT with **Contents: Read** on the repo, then export it:
 
 ```bash
 export GH_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-uv add "logger-testing @ git+https://${GH_TOKEN}@github.com/OWNER/REPO.git@REF"
+uv add "logify @ git+https://${GH_TOKEN}@github.com/farhan-riasat26/logify.git@REF"
 ```
 
 > Avoid committing the token. In CI, inject it via a secret (`${{ secrets.GH_TOKEN }}`).
@@ -41,26 +41,26 @@ If you already run `gh auth login`, configure Git to use it:
 
 ```bash
 gh auth setup-git
-uv add "logger-testing @ git+https://github.com/OWNER/REPO.git@REF"
+uv add "logify @ git+https://github.com/farhan-riasat26/logify.git@REF"
 ```
 
 ### 2. Alternative install commands
 
 ```bash
 # Install into the active project (adds to pyproject.toml + lockfile)
-uv add "logger-testing @ git+https://github.com/OWNER/REPO.git@main"
+uv add "logify @ git+https://github.com/farhan-riasat26/logify.git@main"
 
 # Install into the active venv without touching pyproject.toml
-uv pip install "git+https://github.com/OWNER/REPO.git@main"
+uv pip install "git+https://github.com/farhan-riasat26/logify.git@main"
 
 # Install a specific tag
-uv add "logger-testing @ git+https://github.com/OWNER/REPO.git@v0.1.0"
+uv add "logify @ git+https://github.com/farhan-riasat26/logify.git@v0.1.0"
 
 # Install a specific commit
-uv add "logger-testing @ git+https://github.com/OWNER/REPO.git@<commit-sha>"
+uv add "logify @ git+https://github.com/farhan-riasat26/logify.git@<commit-sha>"
 
 # Install as a tool
-uv tool install "git+https://github.com/OWNER/REPO.git@main"
+uv tool install "git+https://github.com/farhan-riasat26/logify.git@main"
 ```
 
 ### 3. Declaring it in `pyproject.toml`
@@ -68,7 +68,7 @@ uv tool install "git+https://github.com/OWNER/REPO.git@main"
 ```toml
 [project]
 dependencies = [
-    "logger-testing @ git+https://github.com/OWNER/REPO.git@main",
+    "logify @ git+https://github.com/farhan-riasat26/logify.git@main",
 ]
 ```
 
@@ -76,10 +76,10 @@ Or with `[tool.uv.sources]` (recommended — keeps the version spec clean):
 
 ```toml
 [project]
-dependencies = ["logger-testing"]
+dependencies = ["logify"]
 
 [tool.uv.sources]
-logger-testing = { git = "https://github.com/OWNER/REPO.git", rev = "main" }
+logify = { git = "https://github.com/farhan-riasat26/logify.git", rev = "main" }
 ```
 
 Then run:
@@ -116,5 +116,5 @@ shutdown()
 ## Troubleshooting
 
 - **`fatal: Authentication failed`** — PAT is missing the `Contents: Read` scope or the repo hasn't been granted access.
-- **`Package 'logger-testing' not found`** — the ref doesn't exist; check branch/tag name.
-- **Stale cached build** — clear with `uv cache clean logger-testing` and reinstall.
+- **`Package 'logify' not found`** — the ref doesn't exist; check branch/tag name.
+- **Stale cached build** — clear with `uv cache clean logify` and reinstall.
